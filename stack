@@ -1,0 +1,54 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define C 5
+int stack[C],top=-1;
+void push(int);
+int isFull(void);
+int main(){
+    int ch,item;
+    while(1)
+    {
+    printf("1.push\n");
+    printf("2.pop\n");
+    printf("3.peek\n");
+    printf("4.traverse\n");
+    printf("enter the choice:");
+    scanf("%d",&ch);
+
+switch(ch)
+{
+    case 1 : printf("enter the elements :");
+    scanf("%d",&item);
+          push(item);
+}
+}
+}
+void push(int k)
+{
+    if(isFull())
+    {
+        printf("enter the stack is full");
+        
+    }
+    else
+    {
+        top++;
+        stack[top]=k;
+        printf("%d",k);
+    }
+        
+
+int isFull()
+{
+    if(top==C-1)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+}
+
+
