@@ -36,7 +36,7 @@ void push(int k)
         stack[top]=k;
         printf("%d",k);
     }
-        
+}        
 
 int isFull()
 {
@@ -49,6 +49,3 @@ int isFull()
         return 0;
     }
 }
-}
-
-
