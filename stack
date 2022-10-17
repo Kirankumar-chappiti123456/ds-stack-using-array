@@ -187,6 +187,9 @@ switch(ch)
              
     case 4 : traverse();
              break;
+    case 5 : return 0;
+             break;
+             
 }
 }
 }
