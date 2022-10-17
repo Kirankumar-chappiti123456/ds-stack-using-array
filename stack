@@ -135,3 +135,130 @@ int isEmpty()
         return 0;
     }
 }
+stack using static array:
+
+
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+#define C 5
+int stack[C],top=-1;
+void push(int);
+int pop();
+int isEmpty();
+int isFull();
+void peek();
+void traverse();
+int main(){
+    int ch,item;
+    while(1)
+    {
+        printf("1.push\n");
+        printf("2.pop\n");
+        printf("3.peek\n");
+        printf("4.traverse\n");
+        printf("5.Quit\n");
+        
+        
+        printf("enter the choice:");
+        scanf("%d",&ch);
+
+switch(ch)
+{
+    case 1 : printf("enter the elements :");
+                scanf("%d",&item);
+                push(item);
+                break;
+    case 2 : item=pop();
+                if(item==0)
+                {
+                    printf("stack is empty");
+                }
+                else
+                {
+                    printf("%d\n",item);
+                    
+                }
+                break;
+    case 3 : peek();
+             break;
+             
+    case 4 : traverse();
+             break;
+}
+}
+}
+void push(int k)
+{
+    if(isFull())
+    {
+        printf("enter the stack is full");
+        
+    }
+    else
+    {
+        top++;
+        stack[top]=k;
+        printf("%d pushed to stack\n",k);
+    }
+}        
+
+int isFull()
+{
+    if(top==C-1)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+ int pop()
+{
+    if(isEmpty())
+    {
+        return 0;
+    }
+    else{
+        return stack[top--];
+    }
+}
+int isEmpty()
+{
+    if(top==-1)
+    {
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
+void peek()
+{
+    if(isEmpty())
+    {
+        printf("stack is empty");
+    }
+    else{
+        printf("peek elements is: %d\n",stack[top]);
+    }
+}
+void traverse()
+{
+    if(isEmpty())
+    {
+        printf("stack is empty");
+    }
+    else
+    {
+        int i;
+        printf("stack elememts:\n");
+        for(i=0;i<=top;i++)
+        {
+            printf("%d\n",stack[i]);
+        }
+    }
+}
