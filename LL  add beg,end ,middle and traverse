@@ -100,3 +100,130 @@ int main()
 }
     return 0;
 }
+
+
+
+how to add at middle in LL:
+
+
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+    int data;
+    struct node*link;
+    
+};
+struct node *addatmid(struct node* head,int data,int pos)
+
+{
+    struct node *temp=head;
+    struct node* newend=malloc(sizeof(struct node));
+    newend->data=data;
+   newend->link=NULL;
+   pos--;
+   while(pos!=1)
+    {
+        temp=temp->link;
+        pos--;
+    }
+    newend->link=temp->link;
+    temp->link=newend;
+    return head;
+}
+int main()
+{
+    struct node* head=NULL;
+    struct node* p;
+    
+    
+    struct node * ptr=malloc(sizeof(struct node));
+    ptr->data=20;
+    ptr->link=NULL;
+    head=ptr;
+    
+    struct node * ptr1=malloc(sizeof(struct node));
+    ptr1->data=30;
+    ptr1->link=NULL;
+    ptr->link=ptr1;
+    
+    
+    struct node* ptr2=malloc(sizeof(struct node));
+    ptr2->data=40;
+    ptr1->link=NULL;
+    ptr1->link=ptr2;
+    
+    
+    int data=10,pos=3;
+    head=addatmid(head,data,pos);
+    p=head;
+    while(p!=NULL)
+    {
+        printf("%d\n",p->data);
+        p=p->link;
+    }
+    return 0;
+}
+
+
+
+how to delete at beg in LL:
+
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+    int data;
+    struct node*link;
+    
+};
+struct node *delatbeg(struct node* head)
+
+{
+    if(head==NULL)
+{
+    printf("the list is empty");
+}
+else
+{
+    struct node *temp=head;
+    head=head->link;
+}
+return head;
+}
+int main()
+{
+    struct node* head=NULL;
+    struct node* p;
+    
+    
+    struct node * ptr=malloc(sizeof(struct node));
+    ptr->data=20;
+    ptr->link=NULL;
+    head=ptr;
+    
+    struct node * ptr1=malloc(sizeof(struct node));
+    ptr1->data=30;
+    ptr1->link=NULL;
+    ptr->link=ptr1;
+    
+    
+    struct node* ptr2=malloc(sizeof(struct node));
+    ptr2->data=40;
+    ptr1->link=NULL;
+    ptr1->link=ptr2;
+    
+    
+    head=delatbeg(head);
+    p=head;
+    while(p!=NULL)
+    {
+        printf("%d\n",p->data);
+        p=p->link;
+    }
+    return 0;
+}
+
+how to delete at end in LL:
+
+
