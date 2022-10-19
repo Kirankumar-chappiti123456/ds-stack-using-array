@@ -32,6 +32,7 @@ int main()
     k3->r=NULL;
     k2->r=k3;
     
+    
     struct node *k4=malloc(sizeof(struct node));
     k4->l=k3;
     k4->data=40;
