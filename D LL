@@ -46,3 +46,141 @@ int main()
     }
     return 0;
  }
+ 
+ 
+how add at empty dll :
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+    struct node *l;
+    int data;
+    struct node *r;
+};
+struct node *addatempty(struct node *head,int data)
+{
+    struct node *k5=malloc(sizeof(struct node));
+    k5->l=NULL;
+    k5->r=NULL;
+    k5->data=data;
+    head=k5;
+    return head;
+    
+}
+int main()
+{
+    struct node *head=NULL;
+    struct node *p;
+    struct node *k1=malloc(sizeof(struct node));
+    k1->l=NULL;
+    k1->data=10;
+    k1->r=NULL;
+    head=k1;
+    
+    
+    struct node *k2=malloc(sizeof(struct node));
+    k2->l=k1;
+    k2->data=20;
+    k2->r=NULL;
+    k1->r=k2;
+    
+    struct node *k3=malloc(sizeof(struct node));
+    k3->l=k2;
+    k3->data=30;
+    k3->r=NULL;
+    k2->r=k3;
+    
+    struct node *k4=malloc(sizeof(struct node));
+    k4->l=k3;
+    k4->data=40;
+    k4->r=NULL;
+    k3->r=k4;
+    
+    
+    int data=50;        
+    head=addatempty(head,data);
+    p=head;
+    while(p!=NULL)
+    {
+        printf("%d\n",p->data);
+        p=p->r;
+    }
+    return 0;
+ }
+ 
+ 
+how to add at beg in dll :
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+    struct node *l;
+    int data;
+    struct node *r;
+};
+struct node *addatempty(struct node *head,int data)
+{
+    struct node *k5=malloc(sizeof(struct node));
+    k5->l=NULL;
+    //k5->r=NULL;
+    k5->data=data;
+    
+    k5->r=head;
+    head->l=k5;
+    head=k5;
+    return head;
+    
+}
+int main()
+{
+    struct node *head=NULL;
+    struct node *p;
+    struct node *k1=malloc(sizeof(struct node));
+    k1->l=NULL;
+    k1->data=10;
+    k1->r=NULL;
+    head=k1;
+    
+    
+    struct node *k2=malloc(sizeof(struct node));
+    k2->l=k1;
+    k2->data=20;
+    k2->r=NULL;
+    k1->r=k2;
+    
+    struct node *k3=malloc(sizeof(struct node));
+    k3->l=k2;
+    k3->data=30;
+    k3->r=NULL;
+    k2->r=k3;
+    
+    struct node *k4=malloc(sizeof(struct node));
+    k4->l=k3;
+    k4->data=40;
+    k4->r=NULL;
+    k3->r=k4;
+    
+    
+    int data=50;        
+    head=addatempty(head,data);
+    p=head;
+    while(p!=NULL)
+    {
+        printf("%d\n",p->data);
+        p=p->r;
+    }
+    return 0;
+ }
+
+
+
+how to add at end :
+
+
+
