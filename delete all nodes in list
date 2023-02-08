@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node 
+{
+    int data;
+    struct node*next;
+};
+void alld(struct node*head)
+{
+    struct node *c,*n;
+    c=head;
+    while(c!=NULL)
+    {
+        n=c->next;
+        free(c);
+        c=n;
+    }
+    printf("the list is empty");
+}
+
+int main()
+{
+struct node*head=NULL;
+struct node *l;
+struct node *p1=(struct node*)malloc(sizeof(struct node));
+p1->data=10;
+p1->next=NULL;
+head=p1;
+
+
+struct node *p2=(struct node*)malloc(sizeof(struct node));
+p2->data=20;
+p1->next=p2;
+
+struct node *p3=(struct node*)malloc(sizeof(struct node));
+p3->data=30;
+p2->next=p3;
+
+struct node *p4=(struct node*)malloc(sizeof(struct node));
+p4->data=40;
+p3->next=p4;
+
+struct node *p5=(struct node*)malloc(sizeof(struct node));
+p5->data=40;
+p4->next=p5;
+p5->next=NULL;
+
+
+
+
+
+alld(head);
+}
