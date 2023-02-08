@@ -1,0 +1,60 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node 
+{
+    int data;
+    struct node* next;
+    
+};
+struct node *deleteatspec(struct node*head)
+{
+
+    struct node *temp3=head;
+    struct node *temp=head;
+    struct node *temp1=head;
+    temp1=temp1->next;
+    while(temp3->next!=head)
+    {
+        temp3=temp3->next;
+    }
+    head=temp1;
+    free(temp);
+    temp=NULL;
+    temp3->next=head;
+    return head;
+}
+   
+int main()
+{
+    struct node *head=NULL;
+    struct node *temp5;
+    struct node *p=(struct node *)malloc(sizeof(struct node));
+    p->data=10;
+    p->next=NULL;
+    head=p;
+    temp5=head;
+    
+    struct node *p1=(struct node *)malloc(sizeof(struct node));
+    p1->data=20;
+    p->next=p1;
+    
+    struct node *p2=(struct node *)malloc(sizeof(struct node));
+    p2->data=30;
+    p1->next=p2;
+    
+    struct node *p3=(struct node *)malloc(sizeof(struct node));
+    p3->data=40;
+    p2->next=p3;
+    p3->next=head;
+
+head=deleteatspec(head);
+temp5=head;
+  while(temp5->next!=head)
+    {
+    printf("%d  ",temp5->data);
+    temp5=temp5->next;
+    }
+    printf("%d  ",temp5->data);
+
+
+}
