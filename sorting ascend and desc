@@ -1,0 +1,158 @@
+desc:
+
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+    int data;
+    struct node *next;
+};
+struct node *sort(struct node*head)
+{
+    struct node *temp,*c;
+    temp=head;
+    while(temp!=NULL)
+    {
+        c=temp->next;
+        while(c!=NULL)
+        {
+            if(temp->data<c->data)
+            {
+                int t=temp->data;
+                temp->data=c->data;
+                c->data=t;
+            }
+            c=c->next;
+        }
+        temp=temp->next;
+    }
+    return head;
+}
+int main()
+{
+    struct node *head=NULL;
+    struct node *p;
+    
+    struct node *p1=malloc(sizeof(struct node));
+    p1->data=10;
+    head=p1;
+    
+    struct node *p2=malloc(sizeof(struct node));
+    p2->data=20;
+    p1->next=p2;
+    
+    struct node *p3=malloc(sizeof(struct node));
+    p3->data=30;
+    p2->next=p3;
+    
+    struct node *p4=malloc(sizeof(struct node));
+    p4->data=40;
+    p3->next=p4;
+    p4->next=NULL;
+    
+    
+    
+    
+    p=head;
+    printf("before sort:");
+    while(p!=NULL)
+    {
+        printf(" %d ",p->data);
+        p=p->next;
+    }
+    printf("\n");
+    
+    
+    head=sort(head);
+    
+    p=head;
+    printf("after sort:");
+    while(p!=NULL)
+    {
+        printf(" %d ",p->data);
+        p=p->next;
+    
+    }
+    
+}
+
+
+ascend:
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+    int data;
+    struct node *next;
+};
+struct node *sort(struct node*head)
+{
+    struct node *temp,*c;
+    temp=head;
+    while(temp!=NULL)
+    {
+        c=temp->next;
+        while(c!=NULL)
+        {
+            if(temp->data>c->data)
+            {
+                int t=temp->data;
+                temp->data=c->data;
+                c->data=t;
+            }
+            c=c->next;
+        }
+        temp=temp->next;
+    }
+    return head;
+}
+int main()
+{
+    struct node *head=NULL;
+    struct node *p;
+    
+    struct node *p1=malloc(sizeof(struct node));
+    p1->data=10;
+    head=p1;
+    
+    struct node *p2=malloc(sizeof(struct node));
+    p2->data=20;
+    p1->next=p2;
+    
+    struct node *p3=malloc(sizeof(struct node));
+    p3->data=30;
+    p2->next=p3;
+    
+    struct node *p4=malloc(sizeof(struct node));
+    p4->data=40;
+    p3->next=p4;
+    p4->next=NULL;
+    
+    
+    
+    
+    p=head;
+    printf("before sort:");
+    while(p!=NULL)
+    {
+        printf(" %d ",p->data);
+        p=p->next;
+    }
+    printf("\n");
+    
+    
+    head=sort(head);
+    
+    p=head;
+    printf("after sort:");
+    while(p!=NULL)
+    {
+        printf(" %d ",p->data);
+        p=p->next;
+    
+    }
+    
+}
