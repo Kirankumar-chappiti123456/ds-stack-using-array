@@ -1,0 +1,67 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node 
+{
+    int data;
+    struct node* next;
+    
+};
+struct node *deleteallnode(struct node *head)
+{
+    struct node *temp,*temp1;
+    temp=head;
+    int c=0;
+    while(temp!=NULL)
+    {
+        temp1=temp->next;
+        free(temp);
+        temp=NULL;
+    }
+    //struct node *temp2=head;
+    printf("delete");
+    // while(temp2!=NULL)
+    // {
+    //     c++;
+    //     printf("%d",temp2->data);
+    //     temp2=temp2->next;
+    // }
+   
+}
+
+int main()
+{
+    struct node *head=NULL;
+    struct node *q;
+    struct node *w;
+    struct node *p=(struct node *)malloc(sizeof(struct node));
+    p->data=10;
+    p->next=NULL;
+    head=p;
+    q=head;
+    
+    struct node *p1=(struct node *)malloc(sizeof(struct node));
+    p1->data=20;
+    p->next=p1;
+    
+    struct node *p2=(struct node *)malloc(sizeof(struct node));
+    p2->data=30;
+    p1->next=p2;
+    
+    struct node *p3=(struct node *)malloc(sizeof(struct node));
+    p3->data=40;
+    p2->next=p3;
+    p3->next=head;
+// deleteallnode(head);
+// printf("deleted");
+int c=1;
+while(q->next!=head)
+{
+c++;
+printf("%d ",q->data);
+q=q->next;
+}
+printf("%d",q->data);
+printf("\n");
+printf("no of nodes:%d",c);
+
+}
