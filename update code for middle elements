@@ -1,0 +1,12 @@
+void insert(struct node *head)
+{
+    struct node * temp=head;
+    struct node *temp1=head;
+    while(temp1!=NULL && temp1->next!=NULL&& temp1->next->next!=NULL)
+    {
+        temp=temp->next;
+        temp1=temp1->next->next;
+    }
+   
+    printf("%d",temp->data);
+}
